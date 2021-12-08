@@ -11,8 +11,8 @@ const Navbar = () => {
     };
 
     return ( 
-        <div className=" w-full shadow-lg flex flex-row py-4 justify-between">
-            <h1 className="text-4xl">pixSearch</h1>
+        <div className="fixed  bg-white  w-full shadow-lg flex flex-row py-4 justify-between">
+            <h1 className="text-4xl px-4 font-medium">pixSearch</h1>
            <ul className="hidden lg:flex lg:flex-row">
             <a href="#"  className="mx-3 text-lg px-4 border-2 border-gray-500 rounded-full hover:bg-gray-500 hover:text-white"><li>Home</li></a>
             <a href="#"  className="mx-3 text-lg text-lg px-4 border-2 border-gray-500 rounded-full hover:bg-gray-500 hover:text-white"><li>About</li></a>

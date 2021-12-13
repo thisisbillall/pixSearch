@@ -1,16 +1,17 @@
+import { useState } from "react";
 import banner from "../images/banner.jpg";
 import FetchAllImages from "./FetchAllImages";
-
+import ScrollUp from "./ScrollUp";
+import Searchbar from "./Searchbar";
 const Hero = () => {
+    const [search,setSearch]= useState("nature");
+
+    
     return (  
         <>
-        <div className="py-20">
-            <input className="my-5 py-3 px-3 w-1/2 border-2 border-black rounded-full" 
-            type="text" placeholder="Search for Images here ..."/>
-        </div>
-        <div className="grid lg:grid-cols-2 sm:grid-cols-1">
+        <div className="grid lg:grid-cols-2 sm:grid-cols-1 py-48">
             <div>
-                <h1 className="text-8xl font-bold text-center">
+                <h1 className="lg:text-8xl sm:text-2xl font-bold text-center">
                     We offer the best high quality images.
                 </h1>
                <div className="my-20">
@@ -20,16 +21,24 @@ const Hero = () => {
                </div>
             </div>
 
-            <div className="px-5">
+            <div className="px-5 ">
                 <img src={banner} alt="banner-img"/>  
             </div>
         </div>
 
-        <div className="bg-black">
-            <h1 className="text-white text-4xl py-14">Choose from 3M gallery</h1>
-            <FetchAllImages/>
-        </div>
+        <div className="">
 
+           <a href="#search-div">
+                <ScrollUp/>
+           </a>
+
+            {/* <h1 className="text-black text-4xl py-14">Choose from 3M gallery</h1> */}
+            <div className="" id="search-div">
+                <Searchbar search={search} setSearch={setSearch}/>
+            </div>
+            <FetchAllImages search={search} no_of_img={72}/>
+        </div>
+    
         {/* fetch all images */}
     
         </>
